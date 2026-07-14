@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm install:*)"
+      "Bash(pnpm install:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(docker context:*)",
+      "Bash(docker info:*)",
+      "Bash(Start-Process \"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\")",
+      "Bash(docker pull:*)",
+      "Bash(powershell.exe -Command \"Get-Content 'C:\\\\Users\\\\HI User\\\\.docker\\\\config.json'\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- env | grep -i proxy\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c 'ls /run/user/'\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c 'cat /var/lib/docker/daemon-config.json 2>/dev/null || cat /etc/docker/daemon.json 2>/dev/null || ls /var/lib/docker/ 2>/dev/null'\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c 'ls /tmp/docker-desktop-root/run/config/'\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c 'cat /tmp/docker-desktop-root/run/config/docker/daemon.json'\" 2>&1)",
+      "Bash(powershell.exe -Command \"\n\\\\$json = @{\n  'allow-direct-routing' = \\\\$true\n  'builder' = @{\n    'gc' = @{\n      'defaultKeepStorage' = '20GB'\n      'enabled' = \\\\$true\n    }\n  }\n  'containerd' = '/run/containerd/containerd.sock'\n  'default-network-opts' = @{\n    'bridge' = @{\n      'com.docker.network.enable_ipv4' = 'true'\n      'com.docker.network.enable_ipv6' = 'false'\n    }\n  }\n  'experimental' = \\\\$false\n  'features' = @{\n    'cdi' = \\\\$true\n    'containerd-snapshotter' = \\\\$true\n  }\n  'host-gateway-ips' = @\\('192.168.65.254', 'fdc4:f303:9324::254'\\)\n  'hosts' = @\\('fd://'\\)\n  'insecure-registries' = @\\('hubproxy.docker.internal:5555'\\)\n  'ipv6' = \\\\$false\n  'log-format' = 'json'\n  'mtu' = 1500\n  'pidfile' = '/run/desktop/docker.pid'\n  'proxies' = @{}\n  'runtimes' = @{\n    'nvidia' = @{\n      'path' = 'nvidia-container-runtime'\n    }\n  }\n  'shutdown-timeout' = 2\n  'storage-driver' = 'overlayfs'\n  'swarm-default-advertise-addr' = '192.168.65.3'\n  'userland-proxy' = \\\\$false\n}\n\\\\$jsonStr = \\\\$json | ConvertTo-Json -Depth 10\nWrite-Host \\\\$jsonStr\n\\\\$jsonStr | wsl -d docker-desktop -- sh -c 'cat > /tmp/docker-desktop-root/run/config/docker/daemon.json'\nWrite-Host 'Written'\n\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c 'cat /run/config/docker/daemon.json'\" 2>&1)",
+      "Bash(powershell.exe -Command \"wsl -d docker-desktop -- sh -c ''''kill -HUP 153 && echo sent''''\")",
+      "Bash(powershell.exe -Command \"docker info\")",
+      "Bash(docker compose:*)",
+      "Bash(docker ps:*)"
     ]
   }
 }
